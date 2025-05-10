@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hair Velvet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+    header {
+      background-color: #ffb6c1;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background: #ffa3b5;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1551879408-16e9c1b3e7f6') no-repeat center center/cover;
+      color: black;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .products, .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background: #ffc0cb;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+    button {
+      background: #ff88a0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #d70575;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hair Velvet</h1>
+    <p>We make hair style more aesthetic!</p>
+  </header>
+
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+   
+  </nav>
+
+  <section class="hero">
+    <h2>Discover Your New Favorite Hair Accessory</h2>
+    <p>From clips to crowns – we’ve got everything!</p>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="card">
+        <img src="cabelo.jpg" alt="Hair Clip">
+        <h3>Hair Cabelo</h3>
+        <p>₱120</p>
+        <button onclick="addToCart('Elegant Hair Clip')">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="butterfly.jpg" alt="Hairband">
+        <h3>Butterfly Clip</h3>
+        <p>₱150</p>
+        <button onclick="addToCart('Floral Hairband')">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="scrunchies.jpg" alt="Scrunchie">
+        <h3>Velvet Scrunchie</h3>
+        <p>₱150</p>
+        <button onclick="addToCart('Velvet Scrunchie')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Custom Hair Accessory Design</h3>
+        <p>Get accessories made just for you with your preferred colors and styles.</p>
+      </div>
+      <div class="card">
+        <h3>Gift Wrapping</h3>
+        <p>Perfect for birthdays and special occasions. Add a personal touch!</p>
+      </div>
+      <div class="card">
+        <h3>Style Consultation</h3>
+        <p>Book a session with our stylists to match accessories to your outfits.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    
+  </footer>
+
+  <script>
+    function addToCart(productName) {
+      alert(productName + " has been added to your cart!");
+    }
+  </script>
+
+</body>
+</html>

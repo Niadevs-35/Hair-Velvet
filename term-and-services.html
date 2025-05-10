@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service | Hair Velvet Accessories</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FAF0E6;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff88a0;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 0.3rem;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(255, 136, 160, 0.3);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #d6336c;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    #agree-btn {
+      background-color: #ff88a0;
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #agree-btn:hover {
+      background-color: #fc5c85;
+    }
+
+    #agree-msg {
+      margin-top: 1rem;
+      color: green;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #ff88a0;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      #agree-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Terms of Service</h1>
+    <p>Welcome to Hair Velvet – Your Style, Your Grace</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Introduction</h2>
+      <p>Welcome to Hair Velvet Accessories! By accessing our site or making a purchase, you agree to be bound by the following terms and conditions. Please read them carefully.</p>
+    </section>
+
+    <section>
+      <h2>2. Products</h2>
+      <p>All items are crafted with care using high-quality materials. We ensure top standards, but Hair Velvet is not responsible for any allergic reactions or damages from misuse.</p>
+    </section>
+
+    <section>
+      <h2>3. Orders & Shipping</h2>
+      <p>Orders are processed within 1–3 business days. Delivery times may vary based on location and courier delays. You will receive a tracking number upon shipment.</p>
+    </section>
+
+    <section>
+      <h2>4. Returns & Refunds</h2>
+      <p>Returns are accepted within 14 days of delivery. Items must be unused, in original packaging. Refunds will be issued within 7 days of return confirmation.</p>
+    </section>
+
+    <section>
+      <h2>5. User Conduct</h2>
+      <p>Please respect our website and community. Abusive behavior, fraud, or attempts to disrupt our service may result in access being revoked without notice.</p>
+    </section>
+
+    <section>
+      <h2>6. Changes to Terms</h2>
+      <p>Hair Velvet may update these terms at any time. Continued use of the website signifies your acceptance of any modifications.</p>
+    </section>
+
+    <button id="agree-btn">I Agree</button>
+    <div id="agree-msg"></div>
+  </main>
+
+  <footer>
+    &copy; 2025 Hair Velvet Accessories. All Rights Reserved.
+  </footer>
+
+  <script>
+    document.getElementById('agree-btn').addEventListener('click', function() {
+      document.getElementById('agree-msg').textContent = 'Thank you for accepting the terms!';
+    });
+  </script>
+
+</body>
+</html>

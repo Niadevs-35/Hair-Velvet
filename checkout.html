@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Hair Velvet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color:  #FAF0E6;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .checkout-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      color:rgb(255, 108, 132);
+      margin-bottom: 15px;
+    }
+
+    p {
+      color:#333;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: pink;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: rgb(255, 108, 132);
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2 id="checkout-title">Product Title</h2>
+    <p id="checkout-desc">Product Description</p>
+    <img id="checkout-img" alt="Selected product">
+    <br>
+    <a href="products.html" class="button">Back to Products</a>
+  </div>
+
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const title = params.get('title');
+      const desc = params.get('desc');
+      const img = params.get('img');
+
+      const titleEl = document.getElementById('checkout-title');
+      const descEl = document.getElementById('checkout-desc');
+      const imgEl = document.getElementById('checkout-img');
+
+      if (title && desc && img) {
+        titleEl.innerText = decodeURIComponent(title);
+        descEl.innerText = decodeURIComponent(desc);
+        imgEl.src = decodeURIComponent(img);
+        imgEl.alt = decodeURIComponent(title);
+      } else {
+        titleEl.innerText = "No product selected.";
+        descEl.innerText = "Please return to the products page and select an item.";
+        imgEl.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

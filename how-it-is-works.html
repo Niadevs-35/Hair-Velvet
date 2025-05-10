@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works - Hair Velvet Accessories</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #FAF0E6;
+      color: #333;
+    }
+
+    header {
+      background: #ff88a0;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .step {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .step:hover {
+      box-shadow: 0 4px 12px rgba(255, 136, 160, 0.25);
+    }
+
+    .step h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #d6336c;
+    }
+
+    .step p {
+      margin-top: 0.7rem;
+      display: none;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .step.active p {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #ff88a0;
+      font-size: 0.95rem;
+      color: white;
+      margin-top: 5rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .step {
+        padding: 1.2rem;
+      }
+
+      .step h2 {
+        font-size: 1.2rem;
+      }
+
+      .step p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>How Our Hair Accessories Work</h1>
+    <p>Simple. Stylish. Secure – Your Hair, Elevated.</p>
+  </header>
+
+  <div class="container">
+    <div class="step">
+      <h2>1. Choose Your Accessory</h2>
+      <p>Browse our collection and pick the perfect piece—whether it's velvet scrunchies, floral clips, or shimmering pins—each curated to suit every hair type and style vibe.</p>
+    </div>
+    <div class="step">
+      <h2>2. Secure with a Twist</h2>
+      <p>No more slips or snags. Our accessories feature gentle but firm grips designed to stay put—giving you a flawless hold even through a busy day.</p>
+    </div>
+    <div class="step">
+      <h2>3. All-Day Comfort</h2>
+      <p>Crafted with soft-touch fabrics and smooth edges, our pieces are made for day-long wear. You’ll forget you’re even wearing one—until the compliments roll in.</p>
+    </div>
+    <div class="step">
+      <h2>4. Style & Shine</h2>
+      <p>Accessorize your look instantly—whether it’s for a casual outing, a date night, or your next photo op. Every accessory is a blend of utility and charm.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Hair Velvet Accessories — Designed for Your Everyday Elegance
+  </footer>
+
+  <script>
+    document.querySelectorAll('.step').forEach(step => {
+      step.addEventListener('click', () => {
+        step.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

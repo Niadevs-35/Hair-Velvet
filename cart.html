@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #FAF0E6;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 10px;
+      border-radius: 10px;
+      background-color: #fff6f8;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+
+    .cart-item-content {
+      flex: 1;
+    }
+
+    .cart-item button {
+      background-color: #ff88a0;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #checkout-btn,
+    #clear-cart {
+      margin-top: 20px;
+      background-color: #ff88a0;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    #total-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 15px;
+    }
+
+    /* Styled checkbox */
+    .checkbox-wrap {
+      position: relative;
+      margin-right: 10px;
+    }
+
+    .checkbox-wrap input[type="checkbox"] {
+      opacity: 0;
+      position: absolute;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .custom-check {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #ffe0e7;
+      border-radius: 4px;
+      border: 2px solid #ff88a0;
+      transition: background-color 0.2s ease;
+      position: relative;
+    }
+
+    .checkbox-wrap input:checked + .custom-check {
+      background-color: #ff88a0;
+    }
+
+    .checkbox-wrap input:checked + .custom-check::after {
+      content: '✔';
+      color: white;
+      font-size: 14px;
+      position: absolute;
+      top: 1px;
+      left: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <p id="cart-count">Items in cart: 0</p>
+
+  <label style="display: flex; align-items: center; margin-bottom: 10px;">
+    <input type="checkbox" id="select-all" style="margin-right: 8px;">
+    <strong>Select All</strong>
+  </label>
+
+  <div id="cart-container"></div>
+
+  <p id="total-price"><strong>Total:</strong> Php 0.00</p>
+  <button id="checkout-btn" onclick="checkoutSelected()">Checkout Selected</button>
+  <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+
+  <script>
+    function formatPrice(price) {
+      // Ensure the price is a valid number before formatting
+      if (isNaN(price) || price === null) {
+        return '$0.00'; // Return 0 if price is invalid
+      }
+      return `$${parseFloat(price).toFixed(2)}`;
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cart-count').textContent = `Items in cart: ${cart.length}`;
+    }
+
+    function displayCart() {
+      const cartContainer = document.getElementById('cart-container');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        document.getElementById('total-price').textContent = "Total: Php 0.00";
+        return;
+      }
+
+      cart.forEach((product, index) => {
+        // Validate that the price exists and is a valid number
+        const price = !isNaN(product.price) ? product.price : 0;
+
+        const item = document.createElement('div');
+        item.className = 'cart-item';
+        item.innerHTML = `
+          <label class="checkbox-wrap">
+            <input type="checkbox" class="select-item" data-index="${index}" data-price="${price}">
+            <span class="custom-check"></span>
+          </label>
+          <img src="${product.image}" alt="${product.title}">
+          <div class="cart-item-content">
+            <h3><span class="item-title">${product.title}</span></h3>
+            <p><span class="item-description">${product.description}</span></p>
+            <p><strong>Price:</strong> <span class="item-price">${formatPrice(price)}</span></p>
+          </div>
+          <button onclick="removeItem(${index})">Remove</button>
+        `;
+        cartContainer.appendChild(item);
+      });
+
+      updateCartCount();
+      updateTotal();
+    }
+
+    function updateTotal() {
+      const checkboxes = document.querySelectorAll('.select-item');
+      let total = 0;
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          total += parseFloat(cb.dataset.price);
+        }
+      });
+
+      document.getElementById('total-price').innerHTML = `<strong>Total:</strong> ${formatPrice(total)}`;
+    }
+
+    function removeItem(index) {
+      if (confirm("Are you sure you want to remove this item?")) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCart();
+      }
+    }
+
+    function clearCart() {
+      if (confirm("Clear all items from the cart?")) {
+        localStorage.removeItem('cart');
+        displayCart();
+      }
+    }
+
+    function checkoutSelected() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const selectedItems = Array.from(document.querySelectorAll('.select-item'))
+        .filter(cb => cb.checked)
+        .map(cb => cart[parseInt(cb.dataset.index)]);
+
+      if (selectedItems.length === 0) {
+        alert("Please select at least one item.");
+        return;
+      }
+
+      const total = selectedItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
+
+      if (confirm(`Proceed to checkout with ${selectedItems.length} item(s)?\nTotal: ${formatPrice(total)}`)) {
+        sessionStorage.setItem('checkoutItems', JSON.stringify(selectedItems));
+        sessionStorage.setItem('checkoutTotal', total.toFixed(2));
+        window.location.href = `checkout.html`;
+      }
+    }
+
+    // Select All functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const selectAllCheckbox = document.getElementById('select-all');
+      selectAllCheckbox.addEventListener('change', function () {
+        const allCheckboxes = document.querySelectorAll('.select-item');
+        allCheckboxes.forEach(cb => cb.checked = this.checked);
+        updateTotal();
+      });
+    });
+
+    // Update total when individual checkboxes change
+    document.addEventListener('change', function (e) {
+      if (e.target.classList.contains('select-item')) {
+        updateTotal();
+      }
+    });
+
+    window.onload = function () {
+      displayCart();
+    };
+  </script>
+</body>
+</html>

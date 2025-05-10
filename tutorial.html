@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hair Velvet Accessories Tutorial</title>
+  <style>
+    :root {
+      --primary: #ff88a0;
+      --light-pink: #ffe4ec;
+      --soft-bg: #fff7f9;
+      --header-bg: #ffb6c1;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--soft-bg);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 5px solid #ffa0b5;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h2.section-title {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      cursor: pointer;
+      position: relative;
+      padding-left: 2rem;
+      transition: color 0.3s;
+    }
+
+    h2.section-title::before {
+      content: "➤";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    h2.section-title:hover {
+      color: #e055a0;
+    }
+
+    .section-content {
+      display: none;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--light-pink);
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e055a0;
+    }
+
+    .tips {
+      background-color: var(--light-pink);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+   
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      h2.section-title {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hair Velvet Accessories Tutorial</h1>
+    <p>Learn how to style clips, scrunchies, and headbands like a pro!</p>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title" onclick="toggleSection('clips')">🎀 Hair Clips</h2>
+    <div id="clips" class="section-content">
+      <p>Hair clips are perfect for both function and fashion. Use them to secure small sections or add flair to your style.</p>
+      <button onclick="showTips('tip1')">Show Tips</button>
+      <div id="tip1" class="tips">
+        <ul>
+          <li>✨ <strong>Match your clip with your outfit</strong> – Coordinate colors or patterns to create a polished, put-together appearance.</li>
+          <li>✨<strong>Metal clips are great for thick hair</strong> – They offer better grip and stay secure throughout the day.</li>
+          <li>✨ <strong>Stack smaller clips for a trendy twist</strong> – Play with placement and layering to create visual interest.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title" onclick="toggleSection('scrunchies')">🧵 Scrunchies</h2>
+    <div id="scrunchies" class="section-content">
+      <p>Scrunchies are gentle on hair and come in many fabrics. Great for buns, ponytails, or wrist fashion!</p>
+      <button onclick="showTips('tip2')">Show Tips</button>
+      <div id="tip2" class="tips">
+        <ul>
+          <li>🌟 <strong>Velvet scrunchies grip silky hair better</strong> – Their soft texture helps prevent slipping while adding luxurious volume.</li>
+          <li>👗 <strong>Color-coordinate with your outfit</strong> – A pop of color on your wrist or in your hair can tie the whole look together.</li>
+          <li>🔁 <strong>Use oversized scrunchies for drama</strong> – Big, fluffy scrunchies make a bold fashion statement while being functional.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title" onclick="toggleSection('headbands')">👑 Headbands</h2>
+    <div id="headbands" class="section-content">
+      <p>Headbands can be used to keep hair back or add a bold statement to your look.</p>
+      <button onclick="showTips('tip3')">Show Tips</button>
+      <div id="tip3" class="tips">
+        <ul>
+          <li>🧸 <strong>Padded headbands give a classy, retro vibe</strong> – Perfect for adding height and elegance to your outfit.</li>
+          <li>🌀 <strong>Braided or knotted styles add a boho flair</strong> – Great for casual days or festivals. Pair with flowy dresses and soft curls.</li>
+          <li>🌼 <strong>Use headbands with embellishments for events</strong> – Pearls, beads, or floral details make them perfect for weddings or photo shoots.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      const isVisible = section.style.display === "block";
+      section.style.display = isVisible ? "none" : "block";
+    }
+
+    function showTips(tipId) {
+      const tip = document.getElementById(tipId);
+      const isVisible = tip.style.display === "block";
+      tip.style.display = isVisible ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

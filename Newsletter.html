@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newsletter</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background:#FAF0E6; 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .newsletter-container {
+            width: 700px;
+            max-width: 90%;
+            background: rgba(255, 149, 167, 0.775); 
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .newsletter-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        .newsletter-container h1 {
+            font-size: 3rem;
+            color: #3e3737;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-container p {
+            font-size: 1.3rem;
+            color: #6e4f4f;
+            margin-bottom: 30px;
+        }
+
+        .inp {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .inp input {
+            padding: 15px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            width: 60%;
+            min-width: 250px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .inp input:focus {
+            outline: none;
+            border-color: #f48fb1;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .inp button {
+            padding: 15px 25px;
+            background-color: rgba(248, 187, 208, 0.8); 
+            color: #4b2e2e;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .inp button:hover {
+            background-color: rgba(177, 171, 173, 0.9);
+            transform: scale(1.05);
+        }
+
+        .newsletter-navigation ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .newsletter-navigation a {
+            text-decoration: none;
+            color: #5a3e36;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .newsletter-navigation a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 2px;
+            width: 100%;
+            background-color: #f7aac4;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .newsletter-navigation a:hover {
+            color: #c06b84;
+        }
+
+        .newsletter-navigation a:hover::after {
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 600px) {
+            .newsletter-container {
+                padding: 30px;
+            }
+
+            .inp {
+                flex-direction: column;
+            }
+
+            .inp input, .inp button {
+                width: 100%;
+            }
+        }
+        .footer-link {
+        text-decoration: none;       
+         color: inherit;              
+         font-weight: normal;         
+        transition: all 0.3s ease;   
+        display: inline-block;      
+}
+
+    .footer-link:hover {
+    color: rgb(245, 161, 175);                 
+    font-weight: bold;         
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="newsletter-container">
+        <h1>Join Hair Velvet </h1>
+        <p>Step into a world of elegant aesthetics. Subscribe to receive beautifully curated content, events, and offers.</p>
+        <div class="inp">
+            <input type="email" placeholder="Your email address">
+            <button>Subscribe</button>
+        </div>
+        <div class="newsletter-navigation">
+            <ul>
+                <li><a href="newsletter-articles.html">Articles</a></li>
+                <li><a href="newsletter-events.html">Events</a></li>
+                <li><a href="newsletter-promotions.html">Promotions</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

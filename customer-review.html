@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hair Velvet Reviews</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #FAF0E6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      margin-top: 70px;
+      justify-content: center;
+      padding: 10px;
+      background: #fff0f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #d63384;
+    }
+
+    .product {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .product img {
+      width: 180px;
+      height: 180px;
+      border-radius: 10px;
+    }
+
+    .product h2 {
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #ff88a0;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff1493;
+    }
+
+    .reviews {
+      background: #fff;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .reviews h3 {
+      margin-top: 0;
+    }
+
+    .review-item {
+      background: #f8f9fa;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .review-item strong {
+      color: #b30e6b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hair Velvet Reviews</h1>
+
+    <div class="product">
+      <img src="pear.jpg" alt="Hair Clip">
+      <h2>Elegant Pearl Hair Clip</h2>
+      <p>Perfect for weddings, parties, and everyday elegance!</p>
+    </div>
+
+    <form id="reviewForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <textarea id="review" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <div class="reviews">
+      <h3>Customer Reviews</h3>
+      <div id="reviewList"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const review = document.getElementById("review").value.trim();
+
+      if (name && review) {
+        const reviewDiv = document.createElement("div");
+        reviewDiv.classList.add("review-item");
+        reviewDiv.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+        document.getElementById("reviewList").appendChild(reviewDiv);
+
+        document.getElementById("reviewForm").reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

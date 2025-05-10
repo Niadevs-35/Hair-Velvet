@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Velvet</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Web.css">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;900&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <nav>
+        
+    <div class="logo">
+            <img src="logo.jpg" alt="Logo" style="height: 50px;">
+            <h1>Hair Velvet</h1>
+        </div>
+  
+  
+    <div class="search-container">
+        <div class="search-wrapper" style="position: relative;">
+            <input type="text" id="searchBox" placeholder="Search..." class="search-input"
+                style="padding: 8px 36px 8px 36px; border-radius: 20px; width: 100%;" />
+            <svg id="searchIcon" class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); cursor: pointer;">
+                <path d="M10.5 19a8.5 8.5 0 116.342-2.84l5.017 5.017a.482.482 0 11-.683.682l-5.016-5.017A8.469 8.469 0 0110.5 19zm0-.944a7.556 7.556 0 100-15.112 7.556 7.556 0 000 15.112z"
+                    fill="#555" />
+            </svg>
+            <svg id="closeIcon" class="icon" onclick="clearSearch()" width="20" height="20" viewBox="0 0 24 24"
+                fill="none" xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); cursor: pointer; display: none;">
+                <path d="M6 6L18 18M6 18L18 6" stroke="#555" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </div>
+    </div>
+  
+  
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('products')">Products</a></li>
+      <li><a href="#" onclick="showSection('blog')">Blog</a></li>
+      <li><a href="#" onclick="showSection('about')">About Us</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      <li><a href="#" onclick="showSection('faqs')">FAQs</a></li>
+      <li><a href="#" onclick="showSection('testimonial')">Customer Testimonials</a></li>
+      <li><a href="log.html" id="btn" 
+        style="display: inline-block; padding: 5px 20px; justify-content: center; background-color: rgb(252, 117, 139); font-size: 18px; color: white; text-decoration: none; border-radius: 5px;">Log In</a></li>
+    </ul>
+    
+    
+      <a href="cart.html">
+      <div class="cart">
+        <span class="cart-icon-wrapper tooltip">
+          <i id="cartIcon" class="fa-sharp fa-solid fa-cart-shopping"></i>
+          <span id="cart-count-mobile">0</span>
+          <span class="tooltiptext">View Cart</span>
+        </span>
+      </div>
+    </a>
+    
+ </nav>
+  
+        
+        <section id="home">
+          <div class="mainPage">
+            <div class="text">
+              <h1>We make</h1>
+              <h1 class="heads">Hair style more</h1>
+              <h1>Aesthetic</h1>
+              <button onclick="showSection('products')" style="margin-top: 20px; padding: 12px 24px; font-size: 16px; border: none; background-color: #ff88a0; color: white; border-radius: 8px; cursor: pointer;">
+                Shop Now
+              </button>
+      
+            </div>
+            <img src="clipp.jpg" alt="Hair Accessory">
+          </div>
+        </section>
+  
+       <section id="cardMen">
+          <div class="cardMen" style="display: block;">
+           <div class="banner-header">
+
+            <div class="featuredBanner">
+              <h2>Featured Collection</h2>
+              <p>Explore our most-loved hair accessories that blend style and comfort. Limited stocks available!</p>
+              
+            </div>
+          </div>
+          
+          <div class="card">
+            
+            <div class="crd">
+              <img src="cabelo.jpg" onclick="showCard(this)">
+              <p class="description">
+                Four vibrant headbands in various colors. Available for 20 pesos each headband.
+              </p>
+              <div class="txt">
+                <h3>₱20: Hair Cabelo</h3>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i><br>
+                <div class="button-group">
+                  <button class="cart-btn" onclick="addToCart('item1')">Add To Cart</button>
+                  <button class="buy-btn" onclick="buyNow('item1')">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          
+          
+          
+            <div class="crd">
+              <img src="scrunchies.jpg" onclick="showCard(this)">
+              <p class="description">
+                Three scrunchie hair ties in brown, white, and patterned design, available at 23 pesos each.
+              </p>
+              <div class="txt">
+                <h3>₱23: Scrunchies</h3>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i><br>
+                <div class="button-group">
+                  <button class="cart-btn" onclick="addToCart('item2')">Add To Cart</button>
+                  <button class="buy-btn" onclick="buyNow('item2')">Buy Now</button>
+                </div> 
+            </div>
+          </div>
+
+            
+            <div class="crd">
+              <img src="claw.jpg" onclick="showCard(this)">
+              <p class="description">
+                Hair claw in different shades of pink — dark, light, clear, and pastel. ₱30 each.
+              </p>
+              <div class="txt">
+                <h3>₱30: Clip Claw</h3>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i><br>
+                <div class="button-group">
+                  <button class="cart-btn" onclick="addToCart('item3')">Add To Cart</button>
+                  <button class="buy-btn" onclick="buyNow('item3')">Buy Now</button>
+                </div>
+              </div>
+            </div>
+      </section>    
+
+          <section id="products">
+          <div class ="products" style="display:block;">
+            <div class="banner-title">
+              <h2 class="section-title">Hair Accessories</h2>
+            </div>
+            
+          
+            <div class="cartContent" id="cartContent" style="display: none;">
+              <div class="cartImage">
+                <img id="cartImg" src="" alt="Product Image">
+              </div>
+              <div class="cartDetails">
+                <h1 id="productTitle">Product Title</h1>
+                <p class="description" id="productDescription">Full product description goes here.</p>
+                <div class="btn">
+                  <button onclick="addToCart(currentProductId)">Add To Cart</button>
+                  <button onclick="buyNow(currentProductId)">Buy Now</button>
+                </div>
+                <div class="btns">
+                  <button class="relode" onclick="closeFullPage()">Back</button>
+                </div>
+              </div>
+            </div>
+            
+  
+
+              <div class="product-list">
+
+                <div class="crd" id="item1">
+                  <img src="cabelo.jpg" alt="Hair Cabelo">
+                  <div class="txt">
+                    <h4>
+                      <span class="title">Hair Cabelo</span>
+                      <span class="price" data-price="20">₱20</span>
+                    </h4>
+                    <p class="description">Four vibrant headbands in black, beige, tan, and white. Combines comfort, quality, and effortless style.</p>
+                    <p><strong>Price:</strong> <span class="item-price">Php 20.00</span></p>
+                    <div class="button-group">
+                      <button class="cart-btn" data-id="item1">Add To Cart</button>
+                      <button class="buy-btn" data-id="item1">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+
+
+              <div class="crd" id="item2">
+                <img src="scrunchies.jpg" alt="Scrunchies">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Scrunchies</span>
+                    <span class="price" data-price="23">₱23</span>
+                  </h4>
+                  <p class="description">Soft and stretchy scrunchies hair ties in brown, white, and patterned light brown – perfect for daily wear.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 23.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item2">Add To Cart</button>
+                    <button class="buy-btn" data-id="item2">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="crd" id="item3">
+                <img src="claw.jpg" alt="Clip Claw">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Clip Claw</span>
+                    <span class="price" data-price="30">₱30</span>
+                  </h4>
+                  <p class="description">Hair claw in different shades of pink: dark, light, clear, and pastel pink. Durable plastic claw clip for a strong yet comfortable hold.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 30.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item3">Add To Cart</button>
+                    <button class="buy-btn" data-id="item3">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            
+              <div class="crd" id="item4">
+                <img src="love.jpg" alt="Hair Clips">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Hair Clips</span>
+                    <span class="price" data-price="55">₱55</span>
+                  </h4>
+                  <p class="description">Small assorted hair clips and bows in metallic gray and pink. High quality and affordable. Add charm to your hairstyle.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 55.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item4">Add To Cart</button>
+                    <button class="buy-btn" data-id="item4">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            
+              <div class="crd" id="item5">
+                <img src="leaf.jpg" alt="Leaf Clip">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Leaf Clip</span>
+                    <span class="price" data-price="55">₱55</span>
+                  </h4>
+                  <p class="description">Hair clips in pink and black made from plastic. 10 pieces for 55 pesos. Elegant leaf-shaped clip with a metallic finish, ideal for formal styles.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 55.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item5">Add To Cart</button>
+                    <button class="buy-btn" data-id="item5">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="crd" id="item6">
+                <img src="butterfly.jpg" alt="Butterfly Clip">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Butterfly Clip</span>
+                    <span class="price" data-price="55">₱55</span>
+                  </h4>
+                  <p class="description">Gold butterfly hair pins adorned with delicate leaves and flowers. Elegant nature-inspired design. Available for 55 pesos.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 55.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item6">Add To Cart</button>
+                    <button class="buy-btn" data-id="item6">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            
+              <div class="crd" id="item7">
+                <img src="rhinestone.jpg" alt="Stone Clip">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Stone Clip</span>
+                    <span class="price" data-price="18">₱18</span>
+                  </h4>
+                  <p class="description">Elegant gold hair clip with white flowers and rhinestones. Compact and budget-friendly at 18 pesos.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 18.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item7">Add To Cart</button>
+                    <button class="buy-btn" data-id="item7">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            
+              <div class="crd" id="item8">
+                <img src="pear.jpg" alt="Pearl Clip">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Pearl Clip</span>
+                    <span class="price" data-price="50">₱50</span>
+                  </h4>
+                  <p class="description">Set of 6 gold clips with floral and leaf motifs. Minimalist and elegant for 50 pesos.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 50.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item8">Add To Cart</button>
+                    <button class="buy-btn" data-id="item8">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="crd" id="item9">
+                <img src="faux.jpg" alt="Faux Clip">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Faux Clip</span>
+                    <span class="price" data-price="45">₱45</span>
+                  </h4>
+                  <p class="description">White mini clip beads of fine quality. Affordable at 45 pesos. Cozy and stylish faux fur design.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 45.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item9">Add To Cart</button>
+                    <button class="buy-btn" data-id="item9">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+            
+              <div class="crd" id="item10">
+                <img src="clip3.jpg" alt="Fluffychies">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Fluffychies</span>
+                    <span class="price" data-price="15">₱15</span>
+                  </h4>
+                  <p class="description">Set of 3 fluffy hair ties in gray, peach, and pink. Soft, colorful, and durable. 15 pesos each.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 15.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item10">Add To Cart</button>
+                    <button class="buy-btn" data-id="item10">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="crd" id="item11">
+                <img src="hair_hoop.jpg" alt="Hair Hoop">
+                <div class="txt">
+                  <h4>
+                    <span class="title">Hair Hoop</span>
+                    <span class="price" data-price="25">₱25</span>
+                  </h4>
+                  <p class="description">Vintage black and silver-colored hair hoop for smooth, stylish hairstyles. 25 pesos each.</p>
+                  <p><strong>Price:</strong> <span class="item-price">Php 25.00</span></p>
+                  <div class="button-group">
+                    <button class="cart-btn" data-id="item11">Add To Cart</button>
+                    <button class="buy-btn" data-id="item11">Buy Now</button>
+                  </div>
+                </div>
+
+              
+            <div class="crd" id="item12">
+              <img src="vintage.jpg" alt="Vintage Clip">
+              <div class="txt">
+                <h4>
+                  <span class="title">Vintage Clip</span>
+                  <span class="price" data-price="40">₱40</span>
+                </h4>
+                <p class="description">Sleek vintage hair clip with a minimalist design in silver and gold for 40 pesos.</p>
+                <p><strong>Price:</strong> <span class="item-price">Php 40.00</span></p>
+                <div class="button-group">
+                  <button class="cart-btn" data-id="item12">Add To Cart</button>
+                  <button class="buy-btn" data-id="item12">Buy Now</button>
+                </div>
+              </div>
+            </div>
+            </section>
+                                        
+     
+    
+        <section id="blog">
+          <div class="blogContent" style="display: block;">
+            <div class="head">
+                <h1>HAIR VELVET <span>Blog's</span></h1>
+            </div>
+            <div class="trd">
+                <div class="trending">
+                    <img src="blog.jpg" alt="Blog Image">
+                    <div class="txt">
+                        <h3>Trending Hair Accessories</h3><br>
+                        <a href="https://hairvelvet.blogspot.com/2025/03/hair-velvet.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section> 
+
+
+      <section id="about">
+        <div class="about" style="display: block;">
+          <div class="aboutText">
+            <h1>About Us</h1>
+            <p>
+              Welcome to <strong>Hair Velvet</strong> — where elegance meets self-expression.
+              <br><br>
+              We believe that beauty lies in the details, and every hair accessory is a chance to express your unique personality.
+              At Hair Velvet, we craft more than just clips and combs — we create <em>confidence</em>, <em>style</em>, and <em>elevated everyday looks</em>.
+              <br><br>
+              Whether you’re dressing for a special occasion or adding a touch of charm to your daily routine,
+              our accessories are designed to inspire and empower. Made with care and curated for versatility,
+              Hair Velvet is here to help you shine — one strand at a time.
+            </p>
+          </div>
+          <div class="mission-vision">
+            <div class="dumiText">
+              <h2>Mission</h2>
+              <p>
+                Our mission is to empower individuals to feel confident and beautiful by providing
+                <strong>high-quality, stylish, and affordable</strong> hair accessories.
+                <br><br>
+                We are committed to delivering products that celebrate personal style and elevate everyday beauty routines —
+                without compromising on comfort, quality, or creativity.
+              </p>
+            </div>
+            <div class="dumiText">
+              <h2>Vision</h2>
+              <p>
+                Our vision is to become a leading force in the hair accessory industry —
+                a brand known not only for beautiful designs, but for inspiring self-love and confidence.
+                <br><br>
+                We aim to build a community where everyone can express themselves authentically and feel their best —
+                starting with something as simple (and powerful) as the right accessory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="contact">
+        <div class="contact" style="display:block;">
+            <div class="container"> 
+                <div class="connect">
+                    <div class="connectText">
+                        <h1>Contact Us</h1>
+                        <p>Address: Market Site daraga albay</p>
+                        <p>E-mail: hvelvet45@gmail.com</p>
+                        <p>Contact #: 09150064918</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="contact.jpg" alt="Contact Image">
+                    </div>
+                </div>
+                <div class="form">
+                    <h1>Connect with Us</h1>
+                    <form>
+                        <input type="text" placeholder="Enter Your FirstName" required><br>
+                        <input type="text" placeholder="Enter Your LastName" required><br>
+                        <input type="text" placeholder="Enter Your Email" required><br>
+                        <input type="text" placeholder="Enter Your Phone Number" required><br>
+                        <input type="text" placeholder="Enter Your Address" required><br>
+                        <textarea placeholder="Your Message" rows="6" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div> 
+        </div>
+      </section>
+
+      <section id="faqs">
+        <div class="FAQs" style="display: block;">
+            <div class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <button class="faq-question">What is Hair Velvet?</button>
+                    <div class="faq-answer" style="display: none;">Hair Velvet is a premium hair accessory brand that offers elegant, affordable, and stylish pieces...</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer shipping nationwide?</button>
+                    <div class="faq-answer" style="display: none;">Yes! We deliver across the Philippines, with affordable shipping options and delivery in 3–5 business days...</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What materials are your clips made from?</button>
+                    <div class="faq-answer" style="display: none;">We use high-quality, durable, and lightweight materials like resin, metal, and velvet...</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I return or exchange items?</button>
+                    <div class="faq-answer" style="display: none;">Absolutely! We offer returns within 7 days for damaged or incorrect items...</div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section id="testimonial">
+        <div class="testimonial"style="display: block;">
+            <div class="head" style="text-align: center; margin-bottom: 0px;">
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-item">
+                <img src="rose.jpg" alt="Client photo" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h4 class="client-name">@Sarah M.</h4>
+                    <p class="testimonial-text">"Absolutely love the service! Everything was smooth and exceeded my expectations."</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <img src="jennie.jpg" alt="Client photo" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h4 class="client-name">@Angela R.</h4>
+                    <p class="testimonial-text">"Professional, friendly, and the results were stunning. Highly recommend!"</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <img src="jisoo.jpg" alt="Client photo" class="testimonial-img">
+                <div class="testimonial-content">
+                    <h4 class="client-name">@Lisa K.</h4>
+                    <p class="testimonial-text">"Truly amazing experience! The team went above and beyond. I’ll definitely come back again."</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <div class="footer">
+          <div class="footer-content">
+              <div class="footer-sections">
+                  <div class="footer-section">
+                      <h3>About Us</h3>
+                      <p><a href="newsletter.html" class="footer-link">Visit Our Newsletter</a></p>
+                      <p><a href="download-resources.html" class="footer-link">Download Resources</a></p>
+                      <p><a href="product.html" class="footer-link">Services</a></p>
+                      <p><a href="term-and-services.html" class="footer-link">Terms of Service & Privacy Policy</a></p>
+                  </div>
+                  <div class="footer-section">
+                      <h3>Customer Support</h3>
+                      <p><a href="customer-review.html" class="footer-link">Customer Review</a></p>
+                      <p><a href="customer-support.html" class="footer-link">Customer Support</a></p>
+                      <p><a href="tutorial.html" class="footer-link">Tutorials</a></p>
+                      <p><a href="how-it-is-works.html" class="footer-link">How it Works</a></p>
+                  </div>
+              </div>
+              <div class="footer-bottom-left">
+                  <h3>Follow us on</h3>
+                  <div class="social-links">
+                      <a href="https://web.facebook.com/profile.php?id=61574646390802" target="_blank" class="social-link icon-box">
+                          <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="https://hairvelvet.blogspot.com/2025/03/hair-velvet.html" target="_blank" class="social-link icon-box">
+                          <i class="fas fa-blog"></i>
+                      </a>
+                  </div>
+                  <p class="footer-copy">&copy; 2025 Hair Velvet. All rights reserved.</p>
+              </div>
+          </div>
+      </div>
+  
+        
+                
+  <script src="index.js"> </script>
+
+      <script>
+        
+        const searchBox = document.getElementById("searchBox");
+        const searchIcon = document.getElementById("searchIcon");
+        const closeIcon = document.getElementById("closeIcon");
+    
+        searchBox.addEventListener("input", () => {
+          const hasText = searchBox.value.trim() !== "";
+          searchIcon.style.display = hasText ? "none" : "block";
+          closeIcon.style.display = hasText ? "block" : "none";
+        });
+    
+        function clearSearch() {
+          searchBox.value = "";
+          searchIcon.style.display = "block";
+          closeIcon.style.display = "none";
+          searchBox.focus();
+        }
+        </script>
+
+
+      <script>
+      let currentProductId = '';
+      function showFullPage(id, imgSrc, title, description) {
+        currentProductId = id;
+        document.getElementById("cartImg").src = imgSrc;
+        document.getElementById("productTitle").textContent = title;
+        document.getElementById("productDescription").textContent = description;
+        document.getElementById("cartContent").style.display = "flex";
+      }
+
+      function closeFullPage() {
+        document.getElementById("cartContent").style.display = "none";
+      }
+      </script>  
+
+
+      <script>
+        function submitForm(event) {
+          event.preventDefault(); 
+          alert("Thank you! Your message has been submitted.");
+          event.target.reset();
+        }
+      </script>
+
+      <script>
+        function showSection(sectionId) {
+          const sections = document.querySelectorAll('section');
+          sections.forEach(section => section.style.display = 'none');
+
+          const selected = document.getElementById(sectionId);
+          if (selected) selected.style.display = 'block';
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+          showSection('home');
+        });
+      </script>
+     
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const questions = document.querySelectorAll('.faq-question');
+          let currentTimeout = null;
+
+          questions.forEach(question => {
+            question.addEventListener('click', () => {
+              const answer = question.nextElementSibling;
+
+              document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.style.display = 'none';
+              });
+              answer.style.display = 'block';
+              if (currentTimeout) clearTimeout(currentTimeout);
+
+              currentTimeout = setTimeout(() => {
+                answer.style.display = 'none';
+              }, 7000);
+            });
+          });
+        });
+      </script>
+
+
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/681db0a5cf553c190dea9a5f/1iqq5m6jr';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  
+ 
+
+</body>
+</html>
